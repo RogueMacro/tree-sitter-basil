@@ -6,6 +6,9 @@
 (function_call (path (identifier) @function))
 (function_call (path (scoped_identifier (identifier) @function)))
 
+(scoped_identifier (path (scoped_identifier (identifier) @type)))
+(scoped_identifier (path (identifier) @type))
+
 (type) @type
 
 (number) @number
