@@ -1,2 +1,2 @@
-"{" @indent
-"}" @unindent
+"{" @indent.begin
+"}" @indent.end
