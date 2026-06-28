@@ -68,13 +68,18 @@ export default grammar({
     ),
 
     assignment: $ => seq(
-      $.identifier,
+      choice($.identifier, $.deref),
       choice(
         ":=",
         "="
       ),
       $.expression,
       ";"
+    ),
+
+    deref: $ => seq(
+      "*",
+      $.identifier
     ),
 
     while: $ => seq(
@@ -115,9 +120,11 @@ export default grammar({
     ),
 
     binary_expression: $ => choice(
-      prec.left(3, seq($.expression, choice("*", "/"), $.expression)),
-      prec.left(2, seq($.expression, choice("+", "-"), $.expression)),
-      prec.left(1, seq($.expression, choice("<", "<=", ">", ">=", "==", "!="), $.expression))
+      prec.left(5, seq($.expression, choice("*", "/"), $.expression)),
+      prec.left(4, seq($.expression, choice("+", "-"), $.expression)),
+      prec.left(3, seq($.expression, choice("<", "<=", ">", ">=", "==", "!="), $.expression)),
+      prec.left(2, seq($.expression, "&&", $.expression)),
+      prec.left(1, seq($.expression, "||", $.expression)),
     ),
 
     function_call: $ => seq(
