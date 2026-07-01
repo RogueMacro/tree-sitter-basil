@@ -117,6 +117,7 @@ export default grammar({
       $.binary_expression,
       $.function_call,
       $.cast,
+      $.boolean,
     ),
 
     binary_expression: $ => choice(
@@ -165,6 +166,11 @@ export default grammar({
     type: $ => seq(
       optional("&"),
       identifierString
+    ),
+
+    boolean: $ => choice(
+      "true",
+      "false"
     ),
 
     number: $ => /\d+/,

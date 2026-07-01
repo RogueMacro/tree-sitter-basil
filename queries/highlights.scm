@@ -13,6 +13,8 @@
 
 (number) @number
 
+(boolean) @boolean
+
 (comment) @comment
 
 (char_literal) @string

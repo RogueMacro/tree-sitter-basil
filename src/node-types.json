@@ -53,6 +53,11 @@
     }
   },
   {
+    "type": "boolean",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "call_argument_list",
     "named": true,
     "fields": {},
@@ -144,6 +149,10 @@
       "types": [
         {
           "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "boolean",
           "named": true
         },
         {
@@ -534,6 +543,10 @@
     "named": false
   },
   {
+    "type": "false",
+    "named": false
+  },
+  {
     "type": "fn",
     "named": false
   },
@@ -547,6 +560,10 @@
   },
   {
     "type": "return",
+    "named": false
+  },
+  {
+    "type": "true",
     "named": false
   },
   {
