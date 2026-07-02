@@ -113,11 +113,19 @@ export default grammar({
       $.number,
       $.char_literal,
       $.string_literal,
+      $.indexing,
       seq(optional("&"), $.identifier),
       $.binary_expression,
       $.function_call,
       $.cast,
       $.boolean,
+    ),
+
+    indexing: $ => seq(
+      $.identifier,
+      "[",
+      $.expression,
+      "]"
     ),
 
     binary_expression: $ => choice(

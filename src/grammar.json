@@ -362,6 +362,10 @@
           "name": "string_literal"
         },
         {
+          "type": "SYMBOL",
+          "name": "indexing"
+        },
+        {
           "type": "SEQ",
           "members": [
             {
@@ -397,6 +401,27 @@
         {
           "type": "SYMBOL",
           "name": "boolean"
+        }
+      ]
+    },
+    "indexing": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "SYMBOL",
+          "name": "expression"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
         }
       ]
     },
