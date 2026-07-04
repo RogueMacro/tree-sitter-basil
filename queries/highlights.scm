@@ -9,7 +9,8 @@
 (scoped_identifier (path (scoped_identifier (identifier) @module)))
 (scoped_identifier (path (identifier) @module))
 
-(type) @type
+((type) @type (#set! "priority" 99))
+((cast) @string (#set! "priority" 200))
 (num_type_specifier) @type
 
 (num_const) @number

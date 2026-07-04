@@ -205,17 +205,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "identifier"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "deref"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "expression"
         },
         {
           "type": "CHOICE",
@@ -633,7 +624,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "expression"
         },
         {
           "type": "STRING",

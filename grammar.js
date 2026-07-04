@@ -68,7 +68,7 @@ export default grammar({
     ),
 
     assignment: $ => seq(
-      choice($.identifier, $.deref),
+      $.expression,
       choice(
         ":=",
         "="
@@ -153,7 +153,7 @@ export default grammar({
     ),
 
     cast: $ => seq(
-      $.identifier,
+      $.expression,
       "as",
       $.type,
     ),
