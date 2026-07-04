@@ -721,11 +721,23 @@
             {
               "type": "ALIAS",
               "content": {
-                "type": "IMMEDIATE_TOKEN",
-                "content": {
-                  "type": "STRING",
-                  "value": "u64"
-                }
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "IMMEDIATE_TOKEN",
+                    "content": {
+                      "type": "STRING",
+                      "value": "u64"
+                    }
+                  },
+                  {
+                    "type": "IMMEDIATE_TOKEN",
+                    "content": {
+                      "type": "STRING",
+                      "value": "i64"
+                    }
+                  }
+                ]
               },
               "named": true,
               "value": "num_type_specifier"
