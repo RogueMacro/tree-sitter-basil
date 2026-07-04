@@ -714,6 +714,36 @@
       ]
     },
     "number": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "num_const"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "num_const"
+            },
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "IMMEDIATE_TOKEN",
+                "content": {
+                  "type": "STRING",
+                  "value": "u64"
+                }
+              },
+              "named": true,
+              "value": "num_type_specifier"
+            }
+          ]
+        }
+      ]
+    },
+    "num_const": {
       "type": "PATTERN",
       "value": "\\d+"
     },

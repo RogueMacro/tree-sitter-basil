@@ -11,7 +11,8 @@
 
 (type) @type
 
-(number) @number
+(num_const) @number
+(num_type_specifier) @type.builtin
 
 (boolean) @boolean
 

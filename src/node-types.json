@@ -291,6 +291,25 @@
     }
   },
   {
+    "type": "number",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "num_const",
+          "named": true
+        },
+        {
+          "type": "num_type_specifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "parameter_list",
     "named": true,
     "fields": {},
@@ -586,7 +605,11 @@
     "named": false
   },
   {
-    "type": "number",
+    "type": "num_const",
+    "named": true
+  },
+  {
+    "type": "num_type_specifier",
     "named": true
   },
   {

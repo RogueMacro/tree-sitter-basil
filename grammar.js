@@ -181,7 +181,12 @@ export default grammar({
       "false"
     ),
 
-    number: $ => /\d+/,
+    number: $ => choice(
+      $.num_const,
+      seq($.num_const, alias(token.immediate("u64"), $.num_type_specifier)),
+    ),
+
+    num_const: $ => /\d+/,
 
     char_literal: $ => seq(
       "'",
