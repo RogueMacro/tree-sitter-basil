@@ -10,9 +10,9 @@
 (scoped_identifier (path (identifier) @module))
 
 (type) @type
+(num_type_specifier) @type
 
 (num_const) @number
-(num_type_specifier) @type.builtin
 
 (boolean) @boolean
 
@@ -22,13 +22,24 @@
 (string_literal) @string
 
 [
-  "fn"
-  "return"
-  "extern"
-  "while"
-  "if"
   "as"
 ] @keyword
+
+"fn" @keyword.function
+
+"extern" @keyword.import
+
+[
+ "return"
+] @keyword.return
+
+[
+ "while"
+] @keyword.repeat
+
+[
+  "if"
+] @keyword.conditional
 
 
 [
@@ -45,6 +56,7 @@
   "*"
   "/"
   "&"
+  "&&"
   "||"
   "->"
 ] @operator
