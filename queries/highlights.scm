@@ -23,6 +23,7 @@
 
 [
   "as"
+  "memory"
 ] @keyword
 
 "fn" @keyword.function

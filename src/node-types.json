@@ -112,6 +112,10 @@
         {
           "type": "function_definition",
           "named": true
+        },
+        {
+          "type": "memory_definition",
+          "named": true
         }
       ]
     }
@@ -262,6 +266,21 @@
         },
         {
           "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "memory_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "type",
           "named": true
         }
       ]
@@ -579,6 +598,10 @@
   },
   {
     "type": "if",
+    "named": false
+  },
+  {
+    "type": "memory",
     "named": false
   },
   {

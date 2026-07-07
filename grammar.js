@@ -15,11 +15,19 @@ export default grammar({
   rules: {
     source_file: $ => repeat($.definition),
     
-    definition: $ => choice($.extern_definition, $.function_definition, $.comment),
+    definition: $ => choice($.extern_definition, $.function_definition, $.memory_definition, $.comment),
 
     extern_definition: $ => seq(
       "extern",
       $.identifier,
+      ";"
+    ),
+
+    memory_definition: $ => seq(
+      "memory",
+      identifierString,
+      ":",
+      $.type,
       ";"
     ),
 

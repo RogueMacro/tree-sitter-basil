@@ -22,6 +22,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "memory_definition"
+        },
+        {
+          "type": "SYMBOL",
           "name": "comment"
         }
       ]
@@ -36,6 +40,31 @@
         {
           "type": "SYMBOL",
           "name": "identifier"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "memory_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "memory"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[_a-zA-Z][_a-zA-Z0-9]*"
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "type"
         },
         {
           "type": "STRING",
