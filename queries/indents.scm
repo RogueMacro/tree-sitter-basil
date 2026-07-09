@@ -1,2 +1,2 @@
-"{" @indent.begin
-"}" @indent.end
+["{", "(", "["] @indent.auto
+["}", ")", "]"] @indent.dedent
