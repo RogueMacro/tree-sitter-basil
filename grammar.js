@@ -137,6 +137,7 @@ export default grammar({
     ),
 
     binary_expression: $ => choice(
+      prec.left(6, seq(choice("!", "-"), $.expression)),
       prec.left(5, seq($.expression, choice("*", "/"), $.expression)),
       prec.left(4, seq($.expression, choice("+", "-"), $.expression)),
       prec.left(3, seq($.expression, choice("<", "<=", ">", ">=", "==", "!="), $.expression)),
