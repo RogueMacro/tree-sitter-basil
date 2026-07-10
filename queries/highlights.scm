@@ -1,5 +1,5 @@
 (identifier) @variable
-
+(struct_field (identifier) @variable.member)
 
 (function_definition (identifier) @function)
 
@@ -11,6 +11,7 @@
 
 ((type) @type (#set! "priority" 200))
 (num_type_specifier) @type
+(struct_definition (identifier) @type.definition)
 
 (num_const) @number
 
@@ -30,17 +31,13 @@
 
 "extern" @keyword.import
 
-[
- "return"
-] @keyword.return
+"struct" @keyword.type
 
-[
- "while"
-] @keyword.repeat
+"return" @keyword.return
 
-[
-  "if"
-] @keyword.conditional
+"while" @keyword.repeat
+
+"if" @keyword.conditional
 
 
 [

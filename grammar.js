@@ -15,7 +15,13 @@ export default grammar({
   rules: {
     source_file: $ => repeat($.definition),
     
-    definition: $ => choice($.extern_definition, $.function_definition, $.memory_definition, $.comment),
+    definition: $ => choice(
+      $.extern_definition,
+      $.function_definition,
+      $.memory_definition,
+      $.struct_definition,
+      $.comment
+    ),
 
     extern_definition: $ => seq(
       "extern",
@@ -25,11 +31,22 @@ export default grammar({
 
     memory_definition: $ => seq(
       "memory",
-      identifierString,
+      $.identifier,
       ":",
       $.type,
       ";"
     ),
+
+    struct_definition: $ => seq(
+      "struct",
+      $.identifier,
+      "{",
+      repeat($.struct_field),
+      "}"
+    ),
+
+    struct_field: $ => seq($.identifier, ":", $.type, optional(",")),
+
 
     function_definition: $ => seq(
       "fn",
