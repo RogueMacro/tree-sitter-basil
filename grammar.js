@@ -139,11 +139,18 @@ export default grammar({
       $.char_literal,
       $.string_literal,
       $.indexing,
+      $.member_access,
       seq(optional("&"), $.identifier),
       $.binary_expression,
       $.function_call,
       $.cast,
       $.boolean,
+    ),
+
+    member_access: $ => seq(
+      $.expression,
+      ".",
+      $.identifier
     ),
 
     indexing: $ => seq(

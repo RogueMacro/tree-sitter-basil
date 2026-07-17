@@ -447,6 +447,10 @@
           "name": "indexing"
         },
         {
+          "type": "SYMBOL",
+          "name": "member_access"
+        },
+        {
           "type": "SEQ",
           "members": [
             {
@@ -482,6 +486,23 @@
         {
           "type": "SYMBOL",
           "name": "boolean"
+        }
+      ]
+    },
+    "member_access": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "expression"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
         }
       ]
     },
