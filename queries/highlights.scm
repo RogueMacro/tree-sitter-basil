@@ -12,6 +12,8 @@
 ((type) @type (#set! "priority" 200))
 (num_type_specifier) @type
 (struct_definition (identifier) @type.definition)
+(impl_definition (identifier) @type)
+
 
 (num_const) @number
 
@@ -25,6 +27,7 @@
 [
   "as"
   "memory"
+  "impl"
 ] @keyword
 
 "fn" @keyword.function

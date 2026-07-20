@@ -20,7 +20,16 @@ export default grammar({
       $.function_definition,
       $.memory_definition,
       $.struct_definition,
+      $.impl_definition,
       $.comment
+    ),
+
+    impl_definition: $ => seq(
+      "impl",
+      $.identifier,
+      "{",
+      repeat($.function_definition),
+      "}"
     ),
 
     extern_definition: $ => seq(
