@@ -18,6 +18,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "use_definition"
+        },
+        {
+          "type": "SYMBOL",
           "name": "function_definition"
         },
         {
@@ -38,6 +42,23 @@
         }
       ]
     },
+    "use_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "use"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "path"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
     "impl_definition": {
       "type": "SEQ",
       "members": [
@@ -47,7 +68,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "path"
         },
         {
           "type": "STRING",
@@ -855,8 +876,8 @@
           ]
         },
         {
-          "type": "PATTERN",
-          "value": "[_a-zA-Z][_a-zA-Z0-9]*"
+          "type": "SYMBOL",
+          "name": "path"
         }
       ]
     },

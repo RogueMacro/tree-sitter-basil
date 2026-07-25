@@ -1,18 +1,20 @@
 (identifier) @variable
+((identifier) @constant (#match? @constant "^[A-Z0-9_]+$"))
 (struct_field (identifier) @variable.member)
 
 (function_definition (identifier) @function)
 
-(function_call (path (identifier) @function))
-(function_call (path (scoped_identifier (identifier) @function)))
+(function_call (path (identifier) @function (#set! "priority" 200)))
+(function_call (path (scoped_identifier (identifier) @function (#set! "priority" 200))))
 
-(scoped_identifier (path (scoped_identifier (identifier) @module)))
-(scoped_identifier (path (identifier) @module))
+((scoped_identifier (path (scoped_identifier (identifier) @module (#match? @module "^[a-z][a-zA-Z0-9]*$")))))
+((path (scoped_identifier (identifier) @type (#match? @type "^[A-Z][a-zA-Z0-9]*$"))))
+(path (identifier) @module)
 
 ((type) @type (#set! "priority" 200))
 (num_type_specifier) @type
 (struct_definition (identifier) @type.definition)
-(impl_definition (identifier) @type)
+; (impl_definition (identifier) @type)
 
 
 (num_const) @number
@@ -32,7 +34,10 @@
 
 "fn" @keyword.function
 
-"extern" @keyword.import
+[
+ "extern"
+ "use"
+] @keyword.import
 
 "struct" @keyword.type
 

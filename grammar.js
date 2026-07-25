@@ -17,6 +17,7 @@ export default grammar({
     
     definition: $ => choice(
       $.extern_definition,
+      $.use_definition,
       $.function_definition,
       $.memory_definition,
       $.struct_definition,
@@ -24,9 +25,15 @@ export default grammar({
       $.comment
     ),
 
+    use_definition: $ => seq(
+      "use",
+      $.path,
+      ";"
+    ),
+
     impl_definition: $ => seq(
       "impl",
-      $.identifier,
+      $.path,
       "{",
       repeat($.function_definition),
       "}"
@@ -215,7 +222,7 @@ export default grammar({
 
     type: $ => seq(
       optional("&"),
-      identifierString
+      $.path,
     ),
 
     boolean: $ => choice(
