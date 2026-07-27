@@ -2,19 +2,23 @@
 ((identifier) @constant (#match? @constant "^[A-Z0-9_]+$"))
 (struct_field (identifier) @variable.member)
 
-(function_definition (identifier) @function)
+((scoped_identifier (path (scoped_identifier (identifier) @module (#match? @module "^[a-z][a-zA-Z0-9]*$")))))
+((scoped_identifier (path (scoped_identifier (identifier) @type (#match? @type "^[A-Z][a-zA-Z0-9]*$")))))
 
+((path (scoped_identifier (identifier) @module (#match? @module "^[a-z][a-zA-Z0-9]*$"))))
+((path (scoped_identifier (identifier) @type (#match? @type "^[A-Z][a-zA-Z0-9]*$"))))
+
+(path (identifier) @module (#match? @module "^[a-z][a-zA-Z0-9]*$"))
+(path (identifier) @type (#match? @type "^[A-Z][a-zA-Z0-9]*$"))
+
+(function_definition (identifier) @function)
 (function_call (path (identifier) @function (#set! "priority" 200)))
 (function_call (path (scoped_identifier (identifier) @function (#set! "priority" 200))))
-
-((scoped_identifier (path (scoped_identifier (identifier) @module (#match? @module "^[a-z][a-zA-Z0-9]*$")))))
-((path (scoped_identifier (identifier) @type (#match? @type "^[A-Z][a-zA-Z0-9]*$"))))
-(path (identifier) @module)
 
 ((type) @type (#set! "priority" 200))
 (num_type_specifier) @type
 (struct_definition (identifier) @type.definition)
-(impl_definition (type (path (identifier) @type)))
+; (impl_definition (type (path (identifier) @type)))
 
 (package_definition (identifier) @module)
 (mod_definition (identifier) @module)
