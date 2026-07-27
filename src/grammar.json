@@ -14,6 +14,14 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "package_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "mod_definition"
+        },
+        {
+          "type": "SYMBOL",
           "name": "extern_definition"
         },
         {
@@ -39,6 +47,40 @@
         {
           "type": "SYMBOL",
           "name": "comment"
+        }
+      ]
+    },
+    "package_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "package"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "mod_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "mod"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
         }
       ]
     },
@@ -68,7 +110,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "path"
+          "name": "type"
         },
         {
           "type": "STRING",

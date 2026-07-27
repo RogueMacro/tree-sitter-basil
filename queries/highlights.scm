@@ -14,8 +14,10 @@
 ((type) @type (#set! "priority" 200))
 (num_type_specifier) @type
 (struct_definition (identifier) @type.definition)
-; (impl_definition (identifier) @type)
+(impl_definition (type (path (identifier) @type)))
 
+(package_definition (identifier) @module)
+(mod_definition (identifier) @module)
 
 (num_const) @number
 
@@ -30,6 +32,8 @@
   "as"
   "memory"
   "impl"
+  "package"
+  "mod"
 ] @keyword
 
 "fn" @keyword.function

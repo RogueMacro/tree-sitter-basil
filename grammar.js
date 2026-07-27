@@ -16,6 +16,8 @@ export default grammar({
     source_file: $ => repeat($.definition),
     
     definition: $ => choice(
+      $.package_definition,
+      $.mod_definition,
       $.extern_definition,
       $.use_definition,
       $.function_definition,
@@ -23,6 +25,18 @@ export default grammar({
       $.struct_definition,
       $.impl_definition,
       $.comment
+    ),
+
+    package_definition: $ => seq(
+      "package",
+      $.identifier,
+      ";"
+    ),
+
+    mod_definition: $ => seq(
+      "mod",
+      $.identifier,
+      ";"
     ),
 
     use_definition: $ => seq(
@@ -33,7 +47,7 @@ export default grammar({
 
     impl_definition: $ => seq(
       "impl",
-      $.path,
+      $.type,
       "{",
       repeat($.function_definition),
       "}"
