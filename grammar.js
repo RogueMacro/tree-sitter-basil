@@ -235,7 +235,7 @@ export default grammar({
     ),
 
     type: $ => seq(
-      optional("&"),
+      optional("*"),
       $.path,
     ),
 
