@@ -1,4 +1,5 @@
 (identifier) @variable
+((identifier) @variable.builtin (#eq? @variable.builtin "self"))
 ((identifier) @constant (#match? @constant "^[A-Z0-9_]+$"))
 (struct_field (identifier) @variable.member)
 
