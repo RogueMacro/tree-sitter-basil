@@ -10,6 +10,10 @@
         {
           "type": "expression",
           "named": true
+        },
+        {
+          "type": "type",
+          "named": true
         }
       ]
     }
@@ -94,6 +98,29 @@
     "fields": {}
   },
   {
+    "type": "construct",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "definition",
     "named": true,
     "fields": {},
@@ -162,6 +189,10 @@
         },
         {
           "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "construct",
           "named": true
         },
         {

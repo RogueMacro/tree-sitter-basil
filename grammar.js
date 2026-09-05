@@ -12,6 +12,8 @@ const identifierString = /[_a-zA-Z][_a-zA-Z0-9]*/;
 export default grammar({
   name: "basil",
 
+  conflicts: $ => [[$.expression, $.indexing]],
+
   rules: {
     source_file: $ => repeat($.definition),
     
@@ -125,6 +127,7 @@ export default grammar({
     assignment: $ => seq(
       $.expression,
       choice(
+        seq(":", $.type, "="),
         ":=",
         "="
       ),
@@ -169,12 +172,27 @@ export default grammar({
       $.char_literal,
       $.string_literal,
       $.indexing,
+      $.construct,
       $.member_access,
       seq(optional("&"), $.identifier),
       $.binary_expression,
       $.function_call,
       $.cast,
       $.boolean,
+    ),
+
+    construct: $ => seq(
+      "[",
+      $.type,
+      "]",
+      "{",
+      repeat(seq(
+        $.identifier,
+        ":",
+        $.expression,
+        optional(",")
+      )),
+      "}",
     ),
 
     member_access: $ => seq(
