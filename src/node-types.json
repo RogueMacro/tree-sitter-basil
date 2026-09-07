@@ -250,6 +250,10 @@
           "named": true
         },
         {
+          "type": "member_access",
+          "named": true
+        },
+        {
           "type": "path",
           "named": true
         }

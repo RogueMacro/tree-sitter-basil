@@ -15,6 +15,7 @@
 (function_definition (identifier) @function)
 (function_call (path (identifier) @function (#set! "priority" 200)))
 (function_call (path (scoped_identifier (identifier) @function (#set! "priority" 200))))
+(function_call (member_access (identifier) @function))
 
 ((type) @type (#set! "priority" 200))
 (num_type_specifier) @type

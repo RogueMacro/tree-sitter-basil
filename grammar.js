@@ -218,7 +218,10 @@ export default grammar({
     ),
 
     function_call: $ => seq(
-      $.path,
+      choice(
+        $.path,
+        $.member_access,
+      ),
       $.call_argument_list,
     ),
 
