@@ -149,8 +149,8 @@ export default grammar({
     ),
 
     if: $ => seq(
-      "if",
-      $.expression,
+      choice("if", "else if", "else"),
+      optional($.expression),
       "{",
       repeat($.statement),
       "}"

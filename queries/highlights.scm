@@ -55,7 +55,11 @@
 
 "while" @keyword.repeat
 
-"if" @keyword.conditional
+[
+ "if"
+ "else if"
+ "else"
+] @keyword.conditional
 
 
 [
