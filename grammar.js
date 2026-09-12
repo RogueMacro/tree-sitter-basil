@@ -202,7 +202,11 @@ export default grammar({
     ),
 
     indexing: $ => seq(
-      $.identifier,
+      choice(
+        $.identifier,
+        $.member_access,
+        $.function_call
+      ),
       "[",
       $.expression,
       "]"
