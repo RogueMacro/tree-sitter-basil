@@ -1,6 +1,6 @@
 [
   (block)
-] @indent.auto
+] @indent.begin
 
 [
  "}"
