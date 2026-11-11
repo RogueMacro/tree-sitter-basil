@@ -1,2 +1,9 @@
-["{", "(", "["] @indent.auto
-["}", ")", "]"] @indent.dedent
+[
+  (block)
+] @indent.begin
+
+[
+ "}"
+ ")"
+ "]"
+] @indent.branch @indent.end

@@ -49,7 +49,9 @@
  "use"
 ] @keyword.import
 
-"struct" @keyword.type
+; [
+;  "struct"
+; ] @keyword.type
 
 "return" @keyword.return
 
