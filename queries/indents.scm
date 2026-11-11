@@ -1,5 +1,7 @@
 [
-  (block)
+  "{"
+  "("
+  "["
 ] @indent.begin
 
 [
