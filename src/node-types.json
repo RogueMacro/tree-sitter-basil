@@ -176,6 +176,25 @@
       "required": true,
       "types": [
         {
+          "type": "construct",
+          "named": true
+        },
+        {
+          "type": "expression_no_construct",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expression_no_construct",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
           "type": "binary_expression",
           "named": true
         },
@@ -189,10 +208,6 @@
         },
         {
           "type": "char_literal",
-          "named": true
-        },
-        {
-          "type": "construct",
           "named": true
         },
         {
@@ -296,7 +311,7 @@
       "required": false,
       "types": [
         {
-          "type": "expression",
+          "type": "expression_no_construct",
           "named": true
         },
         {
@@ -659,7 +674,7 @@
       "required": true,
       "types": [
         {
-          "type": "expression",
+          "type": "expression_no_construct",
           "named": true
         },
         {

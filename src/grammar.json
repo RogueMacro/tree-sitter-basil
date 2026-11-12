@@ -455,7 +455,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "expression"
+          "name": "expression_no_construct"
         },
         {
           "type": "STRING",
@@ -499,7 +499,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "expression"
+              "name": "expression_no_construct"
             },
             {
               "type": "BLANK"
@@ -560,7 +560,7 @@
         }
       ]
     },
-    "expression": {
+    "expression_no_construct": {
       "type": "CHOICE",
       "members": [
         {
@@ -578,10 +578,6 @@
         {
           "type": "SYMBOL",
           "name": "indexing"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "construct"
         },
         {
           "type": "SYMBOL",
@@ -626,20 +622,47 @@
         }
       ]
     },
+    "expression": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "expression_no_construct"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "construct"
+        }
+      ]
+    },
     "construct": {
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "["
-        },
-        {
-          "type": "SYMBOL",
-          "name": "type"
-        },
-        {
-          "type": "STRING",
-          "value": "]"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "["
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "type"
+                },
+                {
+                  "type": "STRING",
+                  "value": "]"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "type"
+            }
+          ]
         },
         {
           "type": "STRING",
@@ -1185,8 +1208,12 @@
   ],
   "conflicts": [
     [
-      "expression",
+      "expression_no_construct",
       "indexing"
+    ],
+    [
+      "path",
+      "expression_no_construct"
     ]
   ],
   "precedences": [],

@@ -12,7 +12,7 @@ const identifierString = /[_a-zA-Z][_a-zA-Z0-9]*/;
 export default grammar({
   name: "basil",
 
-  conflicts: $ => [[$.expression, $.indexing]],
+  conflicts: $ => [[$.expression_no_construct, $.indexing], [$.path, $.expression_no_construct]],
 
   rules: {
     source_file: $ => repeat($.definition),
@@ -142,7 +142,7 @@ export default grammar({
 
     while: $ => seq(
       "while",
-      $.expression,
+      $.expression_no_construct,
       "{",
       repeat($.statement),
       "}"
@@ -150,7 +150,7 @@ export default grammar({
 
     if: $ => seq(
       choice("if", "else if", "else"),
-      optional($.expression),
+      optional($.expression_no_construct),
       "{",
       repeat($.statement),
       "}"
@@ -167,12 +167,11 @@ export default grammar({
       token.immediate(prec(1, /.*/))
     ),
 
-    expression: $ => choice(
+    expression_no_construct: $ => choice(
       $.number,
       $.char_literal,
       $.string_literal,
       $.indexing,
-      $.construct,
       $.member_access,
       seq(optional("&"), $.identifier),
       $.binary_expression,
@@ -181,10 +180,16 @@ export default grammar({
       $.boolean,
     ),
 
+    expression: $ => choice(
+      $.expression_no_construct,
+      $.construct,
+    ),
+
     construct: $ => seq(
-      "[",
-      $.type,
-      "]",
+      choice(
+        seq("[", $.type, "]"),
+        $.type,
+      ),
       "{",
       repeat(seq(
         $.identifier,
