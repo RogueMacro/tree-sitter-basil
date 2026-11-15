@@ -191,25 +191,6 @@
     }
   },
   {
-    "type": "enum_value",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "enum_variant_value",
-          "named": true
-        },
-        {
-          "type": "path",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "enum_variant",
     "named": true,
     "fields": {},
@@ -269,10 +250,6 @@
         },
         {
           "type": "char_literal",
-          "named": true
-        },
-        {
-          "type": "enum_value",
           "named": true
         },
         {
@@ -880,10 +857,6 @@
   {
     "type": "enum",
     "named": false
-  },
-  {
-    "type": "enum_variant_value",
-    "named": true
   },
   {
     "type": "extern",
