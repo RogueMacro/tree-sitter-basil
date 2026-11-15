@@ -658,6 +658,10 @@
           "name": "member_access"
         },
         {
+          "type": "SYMBOL",
+          "name": "enum_value"
+        },
+        {
           "type": "SEQ",
           "members": [
             {
@@ -708,6 +712,27 @@
           "name": "construct"
         }
       ]
+    },
+    "enum_value": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "path"
+        },
+        {
+          "type": "STRING",
+          "value": "::"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "enum_variant_value"
+        }
+      ]
+    },
+    "enum_variant_value": {
+      "type": "PATTERN",
+      "value": "[_A-Z][_a-zA-Z0-9]*"
     },
     "construct": {
       "type": "SEQ",

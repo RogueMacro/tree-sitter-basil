@@ -8,6 +8,7 @@
 // @ts-check
 
 const identifierString = /[_a-zA-Z][_a-zA-Z0-9]*/;
+const enumVariant = /[_A-Z][_a-zA-Z0-9]*/;
 
 export default grammar({
   name: "basil",
@@ -190,6 +191,7 @@ export default grammar({
       $.string_literal,
       $.indexing,
       $.member_access,
+      $.enum_value,
       seq(optional("&"), $.identifier),
       $.binary_expression,
       $.function_call,
@@ -201,6 +203,14 @@ export default grammar({
       $.expression_no_construct,
       $.construct,
     ),
+
+    enum_value: $ => seq(
+      $.path,
+      "::",
+      $.enum_variant_value
+    ),
+
+    enum_variant_value: $ => enumVariant,
 
     construct: $ => seq(
       choice(

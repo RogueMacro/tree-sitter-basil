@@ -23,6 +23,7 @@
 
 (enum_definition (identifier) @type.definition)
 (enum_variant (identifier) @lsp.type.enumMember)
+(enum_variant_value) @lsp.type.enumMember
 
 (package_definition (identifier) @module)
 (mod_definition (identifier) @module)
