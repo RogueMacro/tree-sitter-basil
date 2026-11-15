@@ -693,8 +693,33 @@
         {
           "type": "SYMBOL",
           "name": "boolean"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "enum_value"
         }
       ]
+    },
+    "enum_value": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "path"
+        },
+        {
+          "type": "STRING",
+          "value": "::"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "enum_value_identifier"
+        }
+      ]
+    },
+    "enum_value_identifier": {
+      "type": "PATTERN",
+      "value": "[_a-zA-Z][_a-zA-Z0-9]*"
     },
     "expression": {
       "type": "CHOICE",
@@ -1288,6 +1313,10 @@
     [
       "path",
       "expression_no_construct"
+    ],
+    [
+      "identifier",
+      "enum_value_identifier"
     ]
   ],
   "precedences": [],

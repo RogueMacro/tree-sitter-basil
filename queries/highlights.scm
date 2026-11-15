@@ -23,7 +23,7 @@
 
 (enum_definition (identifier) @type.definition)
 (enum_variant (identifier) @lsp.type.enumMember)
-; (scoped_identifier (identifier) @lsp.type.enumMember (#match? @lsp.type.enumMember "^[A-Z]"))
+(enum_value_identifier) @lsp.type.enumMember
 
 (package_definition (identifier) @module)
 (mod_definition (identifier) @module)
