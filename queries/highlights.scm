@@ -20,7 +20,9 @@
 ((type) @type (#set! "priority" 200))
 (num_type_specifier) @type
 (struct_definition (identifier) @type.definition)
-; (impl_definition (type (path (identifier) @type)))
+
+(enum_definition (identifier) @type.definition)
+(enum_variant (identifier) @constant)
 
 (package_definition (identifier) @module)
 (mod_definition (identifier) @module)
@@ -51,6 +53,7 @@
 
 [
  "struct"
+ "enum"
 ] @keyword.type
 
 "return" @keyword.return

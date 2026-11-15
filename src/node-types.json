@@ -133,6 +133,10 @@
           "named": true
         },
         {
+          "type": "enum_definition",
+          "named": true
+        },
+        {
           "type": "extern_definition",
           "named": true
         },
@@ -162,6 +166,44 @@
         },
         {
           "type": "use_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enum_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "enum_variant",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enum_variant",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         }
       ]
@@ -810,6 +852,10 @@
   },
   {
     "type": "else if",
+    "named": false
+  },
+  {
+    "type": "enum",
     "named": false
   },
   {

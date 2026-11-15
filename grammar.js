@@ -25,6 +25,7 @@ export default grammar({
       $.function_definition,
       $.memory_definition,
       $.struct_definition,
+      $.enum_definition,
       $.impl_definition,
       $.comment
     ),
@@ -79,6 +80,22 @@ export default grammar({
 
     struct_field: $ => seq($.identifier, ":", $.type, optional(",")),
 
+    enum_definition: $ => seq(
+      "enum",
+      $.identifier,
+      "{",
+      repeat($.enum_variant),
+      "}"
+    ),
+
+    enum_variant: $ => seq(
+      $.identifier,
+      optional(seq(
+        "=",
+        $.number,
+      )),
+      optional(",")
+    ),
 
     function_definition: $ => seq(
       "fn",
