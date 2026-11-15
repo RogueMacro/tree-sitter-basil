@@ -22,7 +22,7 @@
 (struct_definition (identifier) @type.definition)
 
 (enum_definition (identifier) @type.definition)
-(enum_variant (identifier) @constructor)
+(enum_variant (identifier) @lsp.type.enumMember)
 
 (package_definition (identifier) @module)
 (mod_definition (identifier) @module)
