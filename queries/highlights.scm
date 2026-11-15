@@ -22,7 +22,7 @@
 (struct_definition (identifier) @type.definition)
 
 (enum_definition (identifier) @type.definition)
-(enum_variant (identifier) @constant)
+(enum_variant (identifier) @constructor)
 
 (package_definition (identifier) @module)
 (mod_definition (identifier) @module)
