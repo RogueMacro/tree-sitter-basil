@@ -697,6 +697,23 @@
         {
           "type": "SYMBOL",
           "name": "enum_value"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "SYMBOL",
+              "name": "expression"
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
         }
       ]
     },
@@ -1317,6 +1334,10 @@
     [
       "identifier",
       "enum_value_identifier"
+    ],
+    [
+      "expression_no_construct",
+      "function_call"
     ]
   ],
   "precedences": [],

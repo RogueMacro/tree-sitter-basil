@@ -12,7 +12,12 @@ const identifierString = /[_a-zA-Z][_a-zA-Z0-9]*/;
 export default grammar({
   name: "basil",
 
-  conflicts: $ => [[$.expression_no_construct, $.indexing], [$.path, $.expression_no_construct], [$.identifier, $.enum_value_identifier]],
+  conflicts: $ => [
+    [$.expression_no_construct, $.indexing],
+    [$.path, $.expression_no_construct],
+    [$.identifier, $.enum_value_identifier],
+    [$.expression_no_construct, $.function_call]
+  ],
 
   rules: {
     source_file: $ => repeat($.definition),
@@ -196,6 +201,7 @@ export default grammar({
       $.cast,
       $.boolean,
       $.enum_value,
+      seq("(", $.expression, ")"),
     ),
 
     enum_value: $ => seq(

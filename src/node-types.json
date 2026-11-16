@@ -281,6 +281,10 @@
           "named": true
         },
         {
+          "type": "expression",
+          "named": true
+        },
+        {
           "type": "function_call",
           "named": true
         },
